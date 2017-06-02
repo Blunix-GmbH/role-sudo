@@ -1,0 +1,32 @@
+{{ ansible_managed | comment }}
+
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Host alias specification
+{% for alias in sudo_host_aliases %}
+{{ alias }}
+{% endfor %}
+
+# User alias specification
+{% for alias in sudo_user_aliases %}
+{{ alias }}
+{% endfor %}
+
+# Cmnd alias specification
+{% for alias in sudo_cmd_aliases %}
+{{ alias }}
+{% endfor %}
+
+# Runas alias specification
+{% for alias in sudo_runas_aliases %}
+{{ alias }}
+{% endfor %}
+
+# User privilege specification
+{% for perm in sudo_permissions %}
+{{ perm }}
+{% endfor %}
+
+#includedir /etc/sudoers.d

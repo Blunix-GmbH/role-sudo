@@ -1,0 +1,18 @@
+---
+sudo_enabled: no
+
+sudo_user_aliases: []
+# - OPERATORS = joe, mike, jude
+
+sudo_runas_aliases: []
+# - OP = root, operator
+
+sudo_host_aliases: []
+# - INTNET = 10.0.0.0/24, 10.10.0.0/24
+
+sudo_cmd_aliases: []
+# - PRINTING = /usr/bin/lpc, /usr/bin/lprm
+
+sudo_permissions:
+  - "root ALL=(ALL:ALL) ALL"
+
