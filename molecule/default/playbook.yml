@@ -1,0 +1,29 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: False
+  tasks:
+    - name: Install python for Ansible
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      become: True
+      changed_when: False
+
+- name: Converge
+  hosts: all
+  become: yes
+  vars:
+    sudo_enabled: yes
+    sudo_user_aliases:
+      - "ADMINS = %sudo,%bluadm,%brickadm"
+      - "TEST = %sudo,%bluadm,%brickadm"
+    sudo_host_aliases:
+      - "TEST = localhost"
+    sudo_runas_aliases:
+      - "ROOT = #0"
+    sudo_permissions:
+      - "root ALL=(ALL) ALL"
+      - "%sudo ALL=(ROOT) NOPASSWD:ALL"
+      - "ADMINS ALL=(ALL) NOPASSWD:ALL"
+      - "TEST TEST=(ROOT) NOPASSWD:ALL"
+  roles:
+    - role: role-sudo
