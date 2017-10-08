@@ -15,4 +15,3 @@ sudo_cmd_aliases: []
 
 sudo_permissions:
   - "root ALL=(ALL:ALL) ALL"
-
