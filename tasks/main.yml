@@ -1,5 +1,5 @@
 ---
-- include: sudo.yml
+- include_tasks: sudo.yml
   when: sudo_enabled
   tags:
     - sudo
