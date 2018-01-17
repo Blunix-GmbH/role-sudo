@@ -1,32 +1,36 @@
-Ansible Role Sudo
-=========
+# Ansible Role Sudo
 
 Installs and configures sudo.
 
-Example Playbook
-----------------
+# Example Play
 
-    - hosts: all
-      vars:
-        sudo_enabled: yes
-      roles:
-         - blunix.role-sudo
+```yaml
+- hosts: all
+  vars:
+    sudo_enabled: yes
+    sudo_permissions:
+      - "root ALL=(ALL:ALL) ALL"
 
-License
--------
+  roles:
+      - blunix.role-sudo
+```
 
-Apache
+# License
 
-Author Information
-------------------
+Apache-2.0
 
-Service and support for orchestrated hosting environments, continuous integration/deployment/delivery and various Linux and open-source technology stacks are available from:
+# Author Information
+
+Service and support for orchestrated hosting environments,
+continuous integration/deployment/delivery and various Linux
+and open-source technology stacks are available from:
 
 ```
-Blunix GmbH - Professional Linux Service
+Blunix GmbH - Consulting for Linux Hosting 24/7
 Glogauer Straße 21
 10999 Berlin - Germany
 
 Web: www.blunix.org
-Email: mailto:service@blunix.org
+Email: service[at]blunix.org
+Phone: (+49) 30 / 12 08 39 90
 ```
