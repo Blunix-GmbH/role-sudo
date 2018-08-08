@@ -6,5 +6,5 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-def test_package(Package):
-    assert Package('sudo').is_installed
+def test_package(host):
+    assert host.package('sudo').is_installed

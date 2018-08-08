@@ -1,5 +1,8 @@
 ---
-sudo_enabled: no
+sudo_defaults:
+  - env_reset
+  - mail_badpass
+  - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 sudo_user_aliases: []
 # - OPERATORS = joe, mike, jude

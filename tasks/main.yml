@@ -1,5 +1,15 @@
 ---
-- include_tasks: sudo.yml
-  when: sudo_enabled
-  tags:
-    - sudo
+- name: install sudo
+  apt:
+    pkg: sudo
+    state: present
+    update_cache: no
+    install_recommends: no
+
+- name: deploy /etc/sudoers
+  template:
+    src: etc/sudoers.j2
+    dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: 0440

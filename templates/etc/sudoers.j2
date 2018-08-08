@@ -1,8 +1,8 @@
 {{ ansible_managed | comment }}
 
-Defaults	env_reset
-Defaults	mail_badpass
-Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+{% for default in sudo_defaults %}
+Defaults    {{ default }}
+{% endfor %}
 
 # Host alias specification
 {% for alias in sudo_host_aliases %}
