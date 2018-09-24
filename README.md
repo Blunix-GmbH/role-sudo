@@ -7,7 +7,9 @@ Installs and configures sudo.
 ```yaml
 - hosts: all
   vars:
-    sudo_enabled: yes
+    sudo_custom_defaults:
+      - env_keep+=SSH_AUTH_SOCK
+    sudo_defaults: "{{ sudo_defaults + sudo_custom_defaults }}"
     sudo_permissions:
       - "root ALL=(ALL:ALL) ALL"
 
