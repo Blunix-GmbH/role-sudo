@@ -1,4 +1,3 @@
----
 sudo_defaults:
   - env_reset
   - mail_badpass
@@ -17,4 +16,4 @@ sudo_cmd_aliases: []
 # - PRINTING = /usr/bin/lpc, /usr/bin/lprm
 
 sudo_permissions:
-  - "root ALL=(ALL:ALL) ALL"
+  - "sudo ALL=(ALL:ALL) ALL"

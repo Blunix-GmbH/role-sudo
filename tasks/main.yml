@@ -1,12 +1,9 @@
----
 - name: install sudo
   apt:
-    pkg: sudo
+    name: sudo
     state: present
-    update_cache: no
-    install_recommends: no
 
-- name: deploy /etc/sudoers
+- name: template /etc/sudoers
   template:
     src: etc/sudoers.j2
     dest: /etc/sudoers

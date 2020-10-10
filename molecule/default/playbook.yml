@@ -1,19 +1,22 @@
----
 - name: Converge
-  become: yes
+  become: True
   hosts: all
-  vars:
-    sudo_user_aliases:
-      - "ADMINS = %sudo,%bluadm,%brickadm"
-      - "TEST = %sudo,%bluadm,%brickadm"
-    sudo_host_aliases:
-      - "TEST = localhost"
-    sudo_runas_aliases:
-      - "ROOT = #0"
-    sudo_permissions:
-      - "root ALL=(ALL) ALL"
-      - "%sudo ALL=(ROOT) NOPASSWD:ALL"
-      - "ADMINS ALL=(ALL) NOPASSWD:ALL"
-      - "TEST TEST=(ROOT) NOPASSWD:ALL"
   roles:
     - role: role-sudo
+  vars:
+
+    sudo_user_aliases:
+      - "ADMINS = %sudo,%bluadm"
+      - "TEST = %sudo,%bluadm"
+
+    sudo_host_aliases:
+      - "TEST = localhost"
+
+    sudo_runas_aliases:
+      - "ROOT = #0"
+
+    sudo_permissions:
+      - "root ALL=(ALL:ALL) ALL"
+      - "%sudo ALL=(ALL:ALL) ALL"
+      - "ADMINS ALL=(ALL) NOPASSWD:ALL"
+      - "TEST TEST=(ROOT) NOPASSWD:ALL"

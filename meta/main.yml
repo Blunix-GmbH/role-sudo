@@ -1,17 +1,15 @@
 galaxy_info:
-  author: Brian Wiborg
+
+  description: installs and configures sudo
+  author: Peter Thurner
   company: Blunix GmbH
-  license: Apache
-  min_ansible_version: 1.2
+  license: Apache2
+  min_ansible_version: 2.9.10
 
   platforms:
   - name: Debian
     versions:
-    - jessie
-    - stretch
-  - name: Ubuntu
-    versions:
-    - xenial
+    - bullseye
 
   galaxy_tags:
   - blunix

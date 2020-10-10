@@ -1,38 +1,27 @@
-# Ansible Role Sudo
+# blunix_role-sudo
+This Ansible role installs and configures sudo.
 
-Installs and configures sudo.
+This role is part of the Blunix hosting stack. Learn how to use it at <a href="https://man.blunix.com/" target="_blank">man.blunix.com</a>.
 
-# Example Play
+# Author Information
+Blunix GmbH - Consulting for Linux Hosting 24/7
 
-```yaml
-- hosts: all
-  vars:
-    sudo_custom_defaults:
-      - env_keep+=SSH_AUTH_SOCK
-    sudo_defaults: "{{ sudo_defaults + sudo_custom_defaults }}"
-    sudo_permissions:
-      - "root ALL=(ALL:ALL) ALL"
+Blunix GmbH provides 24/7 support with Service Level Agreements for Debian Linux based hosting environments which are automated with Ansible.
 
-  roles:
-      - blunix.role-sudo
+```
+Blunix GmbH
+Glogauer Straße 21
+10999 Berlin
+Germany
+
+Website: https://www.blunix.com
+E-Mail:  contact@blunix.com
+gpg key: https://www.blunix.com/contact-blunix-com-gpg-key
+Signal:  +49 30 629 318 76
+Matrix:  #blunix:matrix.org
 ```
 
 # License
-
 Apache-2.0
 
-# Author Information
-
-Service and support for orchestrated hosting environments,
-continuous integration/deployment/delivery and various Linux
-and open-source technology stacks are available from:
-
-```
-Blunix GmbH - Consulting for Linux Hosting 24/7
-Glogauer Straße 21
-10999 Berlin - Germany
-
-Web: www.blunix.org
-Email: service[at]blunix.org
-Phone: (+49) 30 / 12 08 39 90
-```
+Please refer to the LICENSE file in the root of this repository.
